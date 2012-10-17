@@ -1,0 +1,12 @@
+<h1>Picmarks</h1>
+
+<style>
+  body { background-color: <%= @color %>; }
+</style>
+
+<ul>
+<% @picture_urls.each do |url| %>
+  <li><img src="<%= url %>" width="<%= @width %>" height="100"></li>
+<% end %>
+</ul>
+

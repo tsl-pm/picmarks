@@ -5,8 +5,8 @@
 </style>
 
 <ul>
-<% @picture_urls.each do |url| %>
-  <li><img src="<%= url %>" width="<%= @width %>" height="100"></li>
+<% @picture_urls.each do |picture| %>
+  <li><img src="<%= picture.url %>" width="<%= @width %>" height="100"></li>
 <% end %>
 </ul>
 
