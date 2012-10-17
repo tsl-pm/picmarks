@@ -4,5 +4,6 @@ Picmarks::Application.routes.draw do
   
   get "/pictures/:giraffe", { :controller => 'Pictures', :action => 'show' }
   
+  get "/new_picture", :controller => 'pictures', :action => 'add_picture'
   
 end
