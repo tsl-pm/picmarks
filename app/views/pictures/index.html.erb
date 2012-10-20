@@ -1,12 +1,10 @@
-<h1>Picmarks</h1>
-
-<style>
-  body { background-color: <%= @color %>; }
-</style>
+<%= link_to "Add a New Picture", "/pictures/new" %>
 
 <ul>
-<% @picture_urls.each do |picture| %>
-  <li><img src="<%= picture.url %>" width="<%= @width %>" height="100"></li>
+<% @pictures.each do |picture| %>
+  <li>
+    <%= link_to image_tag(picture.url, :width => 50), "/pictures/#{picture.id}" %>
+  </li>
 <% end %>
 </ul>
 

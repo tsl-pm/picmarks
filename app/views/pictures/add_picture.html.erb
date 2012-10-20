@@ -8,7 +8,13 @@
 <!-- How can you find out what was typed in? -->
 <!-- Can you add that url to the @picture_urls array? -->
 
-<p>Enter a URL for a new picture:</p>
 <form action="/pictures" method="post">
-  <input type="text" name="sample_text_field">
+  <label for="url_input">URL:</label>
+  <input type="text" name="url" id="url_input">
+  
+  <label for="title_input">Title:</label>
+  <input type="text" name="title" id="title_input">
+  
+  <input type="submit">
+  <a href="/pictures">or Cancel</a>
 </form>

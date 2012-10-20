@@ -1,0 +1,10 @@
+<%= form_tag "/pictures" do %>
+  <%= label_tag "url", "URL:" %>
+  <%= text_field_tag :url %>
+  
+  <%= label_tag :title, 'Title:' %>
+  <%= text_field_tag :title %>
+  
+  <%= submit_tag "Add Picture!" %>
+  <%= link_to "or Cancel", "/pictures" %>
+<% end %>
