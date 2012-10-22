@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
     
     respond_to do |format|
       format.html { render 'index'}
+      format.json { render :json => @pictures }
     end
   end
   
@@ -23,7 +24,25 @@ class PicturesController < ApplicationController
     @picture = Picture.find_by_id(params["id"])
   end
   
+  def destroy
+    p = Picture.find_by_id(params["id"])
+    p.destroy
+    redirect_to pictures_url
+  end
+  
 end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
