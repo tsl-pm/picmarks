@@ -30,6 +30,10 @@ class PicturesController < ApplicationController
     redirect_to pictures_url
   end
   
+  def edit
+    @picture = Picture.find_by_id(params["id"])
+  end
+  
 end
 
 

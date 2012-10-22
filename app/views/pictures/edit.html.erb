@@ -1,0 +1,9 @@
+<h1>Edit Picture # <%= @picture.id %></h1>
+
+<%= form_tag "/pictures/#{@picture.id}", :method => 'put' do %>
+  <%= label_tag "url", "URL:" %>
+  <%= text_field_tag :url, @picture.url %>
+  
+  <p>Complete this form and the update action.</p>
+  <p>Use new/create as a guide.</p>
+<% end %>
