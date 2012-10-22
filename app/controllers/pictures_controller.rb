@@ -12,7 +12,11 @@ class PicturesController < ApplicationController
   end
   
   def index
-    @pictures = Picture.all 
+    @pictures = Picture.all
+    
+    respond_to do |format|
+      format.html { render 'index'}
+    end
   end
   
   def show

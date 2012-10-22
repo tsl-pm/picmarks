@@ -1,13 +1,8 @@
 Picmarks::Application.routes.draw do
   
-  get  "/pictures", { :controller => 'Pictures', :action => 'index' }
-  post "/pictures", :controller => 'pictures', :action => 'create'
-
-  # Make this route work:
-  get "/pictures/new", :controller => 'pictures', :action => 'new'
-  
-  get "/pictures/:id", { :controller => 'Pictures', :action => 'show' }
-  
-  
+  get  "/pictures" => 'Pictures#index', :as => 'pictures'
+  post "/pictures", :controller => 'Pictures', :action => 'create'
+  get "/pictures/new", :controller => 'Pictures', :action => 'new', :as => 'new_picture'
+  get "/pictures/:id", :controller => 'Pictures', :action => 'show', :as => 'picture'
   
 end

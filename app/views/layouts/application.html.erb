@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<h1>Picmarks</h1>
+<%= h1_tag("Picmarks") %>
+
+<%= link_to "Index", pictures_path %>
+<%= link_to "Add a New Picture", new_picture_path %>
 
 <%= yield %>
 
