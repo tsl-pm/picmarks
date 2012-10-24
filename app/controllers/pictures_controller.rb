@@ -1,14 +1,20 @@
 class PicturesController < ApplicationController
   
   def new
+    @picture = Picture.new
   end
   
   def create
-    p = Picture.new
-    p.url = params[:url]
-    p.title = params[:title]
-    p.save
-    redirect_to '/pictures'
+    @picture = Picture.new
+    @picture.url = params[:url]
+    @picture.title = params[:title]
+
+    if @picture.save
+      redirect_to pictures_url
+    else
+      flash[:notice] = "You forgot something."
+      render 'new'
+    end
   end
   
   def index
@@ -34,6 +40,16 @@ class PicturesController < ApplicationController
     @picture = Picture.find_by_id(params["id"])
   end
   
+  def update
+    @picture = Picture.find_by_id(params["id"])
+    @picture.url = params[:url]
+    @picture.title = params[:title]
+    if @picture.save
+      redirect_to picture_url(@picture.id)
+    else
+      render 'edit'
+    end
+  end
 end
 
 
