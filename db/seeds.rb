@@ -5,3 +5,39 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Destroying all existing Pictures, if any."
+Picture.destroy_all
+
+pictures = [
+  {
+    :url => "http://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo.png",
+    :title => "Ruby"
+  },
+  { :url => "http://upload.wikimedia.org/wikipedia/commons/1/16/Ruby_on_Rails-logo.png",
+    :title => "Rails"
+  },
+  { :url => "http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png",
+    :title => "HTML5"
+  },
+  { :url => "http://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    :title => "JavaScript"
+  },
+  { :url => "http://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg",
+    :title => "JQuery"
+  },
+  { :url => "http://upload.wikimedia.org/wikipedia/en/1/1c/CoffeeScript-logo.png",
+    :title => "CoffeeScript"
+  },
+  { :url => "http://upload.wikimedia.org/wikipedia/commons/3/3b/Haml_1-5_logo.png",
+    :title => "Haml"
+  }
+]
+
+puts "Populating database with #{pictures.count} Pictures."
+pictures.each do |picture|
+  p = Picture.new
+  p.url = picture[:url]
+  p.title = picture[:title]
+  p.save
+end
