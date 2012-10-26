@@ -5,10 +5,8 @@ class PicturesController < ApplicationController
   end
   
   def create
-    @picture = Picture.new
-    @picture.url = params[:url]
-    @picture.title = params[:title]
-
+    @picture = Picture.new(params[:picture])
+    
     if @picture.save
       redirect_to pictures_url
     else

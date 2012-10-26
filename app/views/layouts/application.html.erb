@@ -5,10 +5,13 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <%= h1_tag("Picmarks") %>
+
+<p id="notice"><%= flash[:notice] %></p>
 
 <%= link_to "Index", pictures_path %>
 <%= link_to "Add a New Picture", new_picture_path %>

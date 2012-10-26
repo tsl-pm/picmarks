@@ -35,9 +35,39 @@ pictures = [
 ]
 
 puts "Populating database with #{pictures.count} Pictures."
-pictures.each do |picture|
-  p = Picture.new
-  p.url = picture[:url]
-  p.title = picture[:title]
-  p.save
+
+Picture.create(pictures)
+
+pictures.each do |picture_hash|
+  
+  # p = Picture.find_by_id(5)
+  # p.update_attributes(picture_hash)
+  
+  # p = Picture.new(picture_hash)
+  # p.save
+  
+  # p = Picture.create(picture_hash)
+  
+  # :url => "http://upload.wikimedia.org/wikipedia/commons/3/3b/Haml_1-5_logo.png"
+  # :title => "Haml"
+  # p = Picture.create(:url => picture[:url], :title => picture[:title])
+  
+  
+  # p = Picture.new
+  # p.url = picture[:url]
+  # p.title = picture[:title]
+  # p.save
 end
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 

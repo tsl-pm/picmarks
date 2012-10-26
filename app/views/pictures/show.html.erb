@@ -1,2 +1,11 @@
-<h2><%= @picture.title %></h2>
-<img src="<%= @picture.url %>" width="150" height="150">
+<div>
+  <img src="<%= @picture.url %>">
+  <p><%= @picture.title %></p>
+  <% if @picture.favorite? %>
+    <p>This is one of my favorites!</p>
+  <% end %>
+  <nav>
+    <%= link_to "Delete", picture_url(@picture.id), :method => 'delete', :confirm => "Whoa dude. Are you sure?" %>
+    <%= link_to "Edit", edit_picture_url(@picture.id) %>
+  </nav>
+</div>

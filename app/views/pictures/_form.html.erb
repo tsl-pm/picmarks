@@ -1,31 +1,27 @@
-<div class="notice"><%= flash[:notice] %></div>
-
+<div>
 <% if @picture.errors.any? %>
-  <div class="error_messages">
     <ul>
       <% @picture.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-  </div>
 <% end %>
 
-<p>Enter your information below:</p>
-
-<%= form_for @picture do |f| %>
+<%= form_for(@picture) do |f| %>
   <%= f.label :url, "URL:" %>
   <%= f.text_field :url, :size => 75 %></p>
 
   <%= f.label :title, "Title:" %>
   <%= f.text_field :title, :size => 75 %>
-
+  
+  <div>
+  <%= f.check_box :favorite %><%= f.label :favorite %>
+  </div>
+  
   <%= f.submit %>
   <%= link_to "or Cancel", pictures_url %>
 <% end %>
-
-
-
-
+</div>
 
 
 
